@@ -9,17 +9,7 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
 }).then(res=>res.json())
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Lineup</title>
-	</head>
-	<body>
-       <Header /> 
-		<h1>Lineup</h1>
+
 <main>
 
     {
@@ -33,6 +23,6 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
 
 
 </body>
-</html>
+
 
 <style></style>
