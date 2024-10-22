@@ -1,24 +1,45 @@
 <style>
-    .banner {
-      background-color: #330CAB; 
-      color: #FE0083; 
-      font-size: 64px; 
-      font-family: "JetBrains Mono", monospace;
-      text-align: center; 
-      padding: 20px; 
-      position: fixed; 
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000; 
+  .banner {
+    background-color: #330CAB; 
+    color: #FE0083; 
+    font-size: 64px; 
+    font-family: "JetBrains Mono", monospace;
+    text-align: center; 
+    padding: 20px; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+    overflow: hidden; /* Sikrer, at teksten ikke hopper udenfor banneret */
+  }
+
+  .marquee {
+    display: flex;
+    justify-content: flex-start;
+    animation: scroll-text 10s linear infinite;
+  }
+
+  .marquee p {
+    margin: 0;
+    white-space: nowrap; /* Sørger for, at teksten ikke brydes til flere linjer */
+    margin-right: 70px; /* Tilføjer mere mellemrum mellem sætningerne */
+  }
+
+  @keyframes scroll-text {
+    0% {
+      transform: translateX(100%);
     }
-  
-    .banner p {
-      margin: 0; 
+    100% {
+      transform: translateX(-100%);
     }
-  </style>
-  
-  <div class="banner">
-    <p>buy your tickets! buy your tickets! buy your tickets!</p>
+  }
+</style>
+
+<div class="banner">
+  <div class="marquee">
+    <p>buy your tickets!</p>
+    <p>buy your tickets!</p>
+    <p>buy your tickets!</p>
   </div>
-  
+</div>
