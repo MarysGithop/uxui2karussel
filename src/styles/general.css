@@ -25,3 +25,7 @@ p {
   font-family: JetBrains Mono;
   font-size: 30px;
 }
+h1 {
+  font-size: 100px;
+  color: #f20ce7;
+}
