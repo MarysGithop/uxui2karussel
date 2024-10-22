@@ -1,12 +1,15 @@
 ---
- const {title, body}=Astro.props;
+const {artist}=Astro.props
+
 ---
 
-
 <article>
-    <h3>{title}</h3>
-    <img src="" alt="">
-    <button>{body}</button>
+    <h3>{artist.name}</h3>
+    <img 
+    src={`/img/${artist.img}`} 
+    alt={artist.name} />
 </article>
 
-<style></style>
+<style>
+
+</style>

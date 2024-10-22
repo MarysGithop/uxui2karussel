@@ -2,7 +2,11 @@
 import "../styles/general.css";
 import Lineup_card  from "../components/Lineup_card.astro";
 import Header from"../components/Header.astro";
- 
+const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/artist", {
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp0d21rcmhxYmZyZWtpcmp5aWl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1MTAzODIsImV4cCI6MjA0NTA4NjM4Mn0.0irOGWBIRkCr3qC0vtq0Q9BGVn4vnA7lg8DQKJoed2k"
+    }
+}).then(res=>res.json())
 ---
 
 <html lang="en">
@@ -17,16 +21,18 @@ import Header from"../components/Header.astro";
        <Header /> 
 		<h1>Lineup</h1>
 <main>
-    <Lineup_card title="hej" body="body" />
-    <Lineup_card />
-    <Lineup_card />
-    <Lineup_card />
-    <Lineup_card />
-    <Lineup_card />
-    <Lineup_card />
+
+    {
+        artists.map((artist)=>(
+            <Lineup_card artist={artist} />
+
+        ))
+    }
     
 </main>
 
 
 </body>
 </html>
+
+<style></style>
