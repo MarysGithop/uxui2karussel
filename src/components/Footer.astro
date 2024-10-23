@@ -1,29 +1,80 @@
 
 
-<footer>
-<img src="public/img/karrusel.logo 1.png" alt="logo">
-<div>
-<div></div>
-<div></div>
-<div></div>
-</div>
 
-<p></p>
-</footer>
+ 
+
+  
+    <footer>
+      
+      <div class="footer-container">
+        <div class="logoimg"><img class="logoimg" src="public/img/karrusel.logo 1.png" alt="logo"></div>
+
+        <div class="container">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+
+        <div class="footer-text">
+          <h6>Kontakt os</h6>
+          <h6>Om os</h6>
+          <h6>Vilkår og betingelser</h6>
+        </div>
+      </div>
+    </footer>
 
 
-<style>
 
+
+
+ <style>
 
 footer {
-  background-color: #210C46;
-  color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            width: 100%;
-}
+        background-color: #210c46;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        position: relative;
+        height: 200px;
+        align-items: center;
+       margin-top: 30px;
+      
+      }
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+      }
 
+      .container {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+         
+      }
 
+      .box {
+        background-color: #8b8b8b;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
 
-</style>
+         .logoimg {
+       width: 100px; 
+       
+      }
+
+      .footer-text {
+        font-size: small;
+        display: block;
+        padding: 5px;
+      }
+    </style>
+ 
