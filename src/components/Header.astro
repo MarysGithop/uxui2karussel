@@ -1,6 +1,51 @@
----
 
 ---
-<nav>
-    <a href="../pages/lineup/single_view">TICKETS</a><a href="../pages/lineup/lineup.astro">LINEUP</a><a href="../pages/lineup/index.astro">MAP</a><a href="../pages/lineup/index.astro">GALLERY</a>
-</nav>
+const { showLogo } = Astro.props;
+---
+
+<header class="header-container">
+    {showLogo && (
+      <div class="logo">
+        <img src="../../public/img/karrusel.logo" alt="Karrusel Logo" />
+      </div>
+    )}
+    <nav class="nav-menu">
+      <a href="../pages/index.astro">Tickets</a>
+      <a href="../pages/lineup.astro">Lineup</a>
+      <a href="../pages/index.astro">Map</a>
+      <a href="../pages/index.astro">Gallery</a>
+    </nav>
+  </header>
+
+<style>
+    
+    .header-container {
+  display: flex;
+  justify-content: space-between; /* Holder logo til venstre og menu til højre */
+  align-items: center;
+  background-color: #400CF2; 
+  padding: 1rem;
+  margin-top: 79.5px;
+}
+
+
+.logo img {
+  height: 50px; 
+}
+
+.nav-menu {
+  margin-left: auto; /* Flyt menuen til højre */
+}
+
+.nav-menu a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: "Bebas Neue";
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+  color: #FE0083;
+}
