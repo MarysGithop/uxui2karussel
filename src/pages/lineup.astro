@@ -1,7 +1,9 @@
 ---
  import Mainlayout from "../layouts/Mainlayout.astro";
 import Lineup_card  from "../components/Lineup_card.astro";
+import Button from "../components/Buttons.astro"
 import Header from"../components/Header.astro";
+import Banner from '../components/Banner.astro';
 const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/artist", {
     headers: {
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp0d21rcmhxYmZyZWtpcmp5aWl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1MTAzODIsImV4cCI6MjA0NTA4NjM4Mn0.0irOGWBIRkCr3qC0vtq0Q9BGVn4vnA7lg8DQKJoed2k"
@@ -9,12 +11,15 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
 }).then(res=>res.json())
 ---
 
-<main>
+
+<Mainlayout>
 
 
+  
 
-<Mainlayout></Mainlayout>
+
 <h1>MON DET VIIIRKER????</h1>
+<Button variant="primary">HER ER MIN KNAP</Button>
     {
         artists.map((artist)=>(
             <Lineup_card artist={artist} />
@@ -22,10 +27,5 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
         ))
     }
     
-</main>
-
-
-</body>
-
-
+</Mainlayout>
 <style></style>
