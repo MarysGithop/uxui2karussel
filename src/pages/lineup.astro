@@ -1,6 +1,7 @@
 ---
  import Mainlayout from "../layouts/Mainlayout.astro";
 import Lineup_card  from "../components/Lineup_card.astro";
+import Button from "../components/Buttons.astro"
 import Header from"../components/Header.astro";
 const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/artist", {
     headers: {
@@ -13,7 +14,11 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
 
 
 
-<Mainlayout></Mainlayout>
+<Mainlayout>
+
+    <Button variant="secondary">Knap</Button>
+
+</Mainlayout>
 <h1>MON DET VIIIRKER????</h1>
     {
         artists.map((artist)=>(
