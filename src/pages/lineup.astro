@@ -12,20 +12,22 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
 ---
 
 
+
+
+
 <Mainlayout>
 
-
-  
-
-
-<h1>MON DET VIIIRKER????</h1>
-<Button variant="primary">HER ER MIN KNAP</Button>
-    {
-        artists.map((artist)=>(
-            <Lineup_card artist={artist} />
-
-        ))
-    }
+    <Button variant="secondary">Knap</Button>
+    <h1>MON DET VIIIRKER????</h1>
+        {
+            artists.map((artist)=>(
+                <Lineup_card artist={artist} />
     
+            ))
+        }
+        
+
 </Mainlayout>
+
+
 <style></style>
