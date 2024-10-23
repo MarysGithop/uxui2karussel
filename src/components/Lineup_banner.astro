@@ -27,7 +27,6 @@
   color: #fff;
   padding-left: 100px;
 }
-
 .cta-button {
   display: flex;
   align-items: center;
@@ -39,9 +38,13 @@
   font-family: "JetBrains Mono";
   font-size: 40px;
   margin-right: 200px;
+  transition: color 0.1s, background-color 0.1s; /* Smooth transition */
 }
 
-
+.cta-button:hover {
+  color: #400cf2; 
+  background-color: white; 
+}
 
 .cta-button .arrow {
   width: 0;
@@ -52,6 +55,11 @@
   position: absolute;
   right: -75px; 
   padding-right: 0px;
+  transition: border-left-color 0.1s; 
+}
+
+.cta-button:hover .arrow {
+  border-left-color: #fff; 
 }
 
   </style>
