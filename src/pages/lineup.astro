@@ -18,10 +18,11 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
 
 <Mainlayout>
 
-    <Button variant="secondary">Knap</Button>
+
 
     <h1>LINEUP</h1>
     
+<img class="karrusel_img" src="../../public/img/karrusel_illustration.png" alt="karrusellen">
 
     <div class="thursday">
         {
@@ -39,6 +40,16 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
 
 
 <style>
+
+.karrusel_img {
+      width: 50%;
+      height: 80%;
+      position: absolute;
+      right: -130px;
+      top: -100px;
+      z-index: 5; 
+      transform: translateX(-20%);
+}
 
 
 </style>
