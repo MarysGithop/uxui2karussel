@@ -19,16 +19,22 @@ export async function getStaticPaths() {
 const { artist } = Astro.props;
 ---
 <Mainlayout>
-
+<div class="danserinde_illustration">
+  <img src="../../../public/img/danserinde_illustration.png" alt="danser_illustration">
+</div>
 
 <article class="single_view_card">
   <h3>{artist.name}</h3>
+  <div class="artist_img_playingtime">
   <img 
   src={`/img/${artist.img}`} 
   alt={artist.name} />
+  <div>
   <h4>{artist.playing_day}</h4>
   <h4>{artist.playing_time}</h4>
   <p>{artist.info}</p>
+</div>
+</div>
 </article>
 
 </Mainlayout>
@@ -38,17 +44,53 @@ const { artist } = Astro.props;
     font-family: "Bebas Neue";
     font-size: 90px;
     color: white;
+    padding-left: 80px;
+    padding-top: 50px;
 }
 
 h4 {
     font-family: "Bebas Neue";
-    font-size: 60px;
+    font-size: 40px;
     color: white;
+    padding-top: 100px;
+    margin-left: -100px;
 }
 
 p{
     font-family: "JetBrains Mono" ;
-    font-size: 30px;
+    font-size: 25px;
     color: white;
+    margin: 15px;
+    margin-left: -100px;
+}
+
+img{
+  transform: scale(0.5);
+  margin-top: -150px;
+  margin-left: -200px;
+}
+
+.artist_img_playingtime{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.danserinde_illustration {
+  position: absolute;
+  top: 100px; 
+  left: 1000px; 
+  z-index: -1; 
+  width: 100%; 
+  height: auto; 
+}
+
+.single_view_card {
+  position: relative; 
+  z-index: 1;
+}
+
+h3, h4, p, img {
+  position: relative; /* Ensures these elements stack properly */
+  z-index: 2;
 }
 </style>
