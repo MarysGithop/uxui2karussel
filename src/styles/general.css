@@ -17,7 +17,6 @@ body {
 
 .jetbrains-mono {
   font-family: "JetBrains Mono", monospace;
-  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
@@ -28,5 +27,13 @@ p {
 }
 h1 {
   font-size: 100px;
+  font-family: "Bebas Neue", serif;
+  color: #f20ce7;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: "Bebas Neue", serif;
+  font-weight: 300;
   color: #f20ce7;
 }

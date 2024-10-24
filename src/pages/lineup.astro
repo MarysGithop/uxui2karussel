@@ -9,6 +9,8 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp0d21rcmhxYmZyZWtpcmp5aWl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1MTAzODIsImV4cCI6MjA0NTA4NjM4Mn0.0irOGWBIRkCr3qC0vtq0Q9BGVn4vnA7lg8DQKJoed2k"
     }
 }).then(res=>res.json())
+
+
 ---
 
 
@@ -18,16 +20,29 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
 <Mainlayout>
 
     <Button variant="secondary">Knap</Button>
-    <h1>MON DET VIIIRKER????</h1>
+    <h1>LINEUP</h1>
+    <div class="thursday">
         {
-            artists.map((artist)=>(
+            artists.filter(artist => artist.playing_day == "thursday").map((artist)=>(
                 <Lineup_card artist={artist} />
     
             ))
         }
+    </div>
         
+    <div>
+    <h3>click here for thursday’s lineup</h3>
+</div>
 
 </Mainlayout>
 
 
-<style></style>
+<style>
+.thursday {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 1px;
+    
+
+}
+</style>
