@@ -1,0 +1,20 @@
+---
+const {artist}=Astro.props
+
+---
+
+<article class="single_view_card">
+    <h3>{artist.name}</h3>
+    <img 
+    src={`/img/${artist.img}`} 
+    alt={artist.name} />
+    <h4>{artist.playing_day}</h4>
+    <h4>{artist.playing_time}</h4>
+    <p>{artist.info}</p>
+</article>
+
+<style>
+
+
+
+</style>
