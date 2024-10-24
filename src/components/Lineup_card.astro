@@ -3,6 +3,9 @@ const {artist}=Astro.props
 
 ---
 
+
+<div class="artist-container">
+
 <article>
     <h3>{artist.name}</h3>
     <img 
@@ -10,6 +13,43 @@ const {artist}=Astro.props
     alt={artist.name} />
 </article>
 
+</div>
+
+
+
 <style>
+
+.artist-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    font-family: "Bebas Neue", serif;
+    position: center;
+   
+    
+}
+article {
+    
+    padding: 10px;
+    text-align: center;
+    
+}
+article h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-right: 100px;
+    color: #F00C8F; 
+    position: absolute;
+
+
+     
+
+}
+article img {
+    width: 100%; 
+    max-width: 200px; 
+    height: auto;
+}
+
+
 
 </style>
