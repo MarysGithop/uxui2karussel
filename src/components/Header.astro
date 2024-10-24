@@ -5,15 +5,17 @@ const { showLogo } = Astro.props;
 
 <header class="header-container">
     {showLogo && (
-      <div class="logo">
-        <img src="public/img/karrusel.logo 1.png" alt="Karrusel Logo" />
+       <div class="logo">
+        <a href="/../../lineup">
+          <img src="/img/karrusel.logo 1.png" alt="Karrusel Logo" />
+        </a>
       </div>
     )}
     <nav class="nav-menu">
-      <a href="/../../index  ">Tickets</a>
+      <a href="/../../index">Tickets</a>
       <a href="/../../lineup">Lineup</a>
-      <a href="../pages/index.astro">Map</a>
-      <a href="../pages/index.astro">Gallery</a>
+      <a href="/../../index">Map</a>
+      <a href="/../../index">Gallery</a>
     </nav>
   </header>
 
