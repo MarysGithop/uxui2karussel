@@ -1,74 +1,39 @@
 ---
-const {artist}=Astro.props
-
+const { artist } = Astro.props
 ---
+
 <a href={"/lineup/" + artist.slug}>
-<div class="flexbox_lineup">
-
-   
-<div class="data_lineup">
-<article>
-    <h3>{artist.name}</h3>
-    <img 
-    src={`/img/${artist.img}`} 
-    alt={artist.name} />
-</article>
-</div>
-
-     <div class="tekstlink">  
-         <h3>click here for thursday’s lineup</h3>
-    </div> 
-
-</div>
-
+    <div class="lineup_card">
+        <img src={`/img/${artist.img}`} alt={artist.name} />
+        <h3>{artist.name}</h3>
+    </div>
 </a>
 
-
-
 <style>
-
-
- .data_lineup {
- display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    font-family: "Bebas Neue", serif;
-    position: center;
- }
-
- .flexbox_lineup {
+.lineup_card {
+    position: relative;
     display: flex;
-     justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
- .tekstlink {
-    display: flex;
- }
-
-
-article {
-     padding-left: 80px;
-    text-align: center;
-     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    position: center;
-    
-}
-article h3 {
-    font-size: 30px;
-    margin-bottom: 10px;
-    margin-right: 100px;
-    color: #F00C8F; 
-   position: absolute;   
-}
-
-article img {
-    width: 100%; 
-    max-width: 250px; 
+.lineup_card img {
+    width: 100%;
     height: auto;
+    max-width: 350px; /* Larger images */
+    object-fit: cover;
+    padding-top: 150px;
 }
 
-
-
+.lineup_card h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #F00C8F; /* Pink color for the artist name */
+    font-size: 80px; /* Larger font size */
+    font-family: "Bebas Neue", serif; /* Ensures font matches your theme */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Optional subtle shadow for readability */
+    text-align: center;
+}
 </style>

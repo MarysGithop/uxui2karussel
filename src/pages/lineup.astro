@@ -1,55 +1,59 @@
 ---
- import Mainlayout from "../layouts/Mainlayout.astro";
-import Lineup_card  from "../components/Lineup_card.astro";
-import Button from "../components/Buttons.astro"
-import Header from"../components/Header.astro";
+import Mainlayout from "../layouts/Mainlayout.astro";
+import Lineup_card from "../components/Lineup_card.astro";
+import Button from "../components/Buttons.astro";
+import Header from "../components/Header.astro";
 import Banner from '../components/Banner.astro';
 const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/artist", {
     headers: {
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp0d21rcmhxYmZyZWtpcmp5aWl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1MTAzODIsImV4cCI6MjA0NTA4NjM4Mn0.0irOGWBIRkCr3qC0vtq0Q9BGVn4vnA7lg8DQKJoed2k"
     }
-}).then(res=>res.json())
-
+}).then(res => res.json())
 ---
-
-
-
-
 
 <Mainlayout>
 
-
-
-    <h1>LINEUP</h1>
+    <h1 class="lineup_h1_class">LINEUP</h1>
     
-<img class="karrusel_img" src="../../public/img/karrusel_illustration.png" alt="karrusellen">
+    <img class="karrusel_img" src="../../public/img/karrusel_illustration.png" alt="karrusellen">
 
     <div class="thursday">
         {
-            artists.filter(artist => artist.playing_day == "thursday").map((artist)=>(
+            artists.filter(artist => artist.playing_day == "thursday").map((artist) => (
                 <Lineup_card artist={artist} />
-    
             ))
         }
     </div>
-  
-        
-
 
 </Mainlayout>
 
-
 <style>
-
 .karrusel_img {
-      width: 50%;
-      height: 80%;
-      position: absolute;
-      right: -130px;
-      top: -100px;
-      z-index: 5; 
-      transform: translateX(-20%);
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    right: -150px;
+    top: 25px;
+    z-index: 1; /* Lower z-index to ensure it's behind other elements */
+    transform: scale(0.6);
 }
 
+.lineup_h1_class {
+    margin-left: 80px;
+    padding-top: 50px;
+    z-index: 10; /* Ensure it's on top */
+}
+
+.thursday {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px; /* Adjusted gap for better spacing */
+    margin-left: 0px;
+    margin-right: 100px;
+    z-index: 2; /* Ensure the grid is above the karrusel image */
+    position: relative; /* Necessary for stacking context */
+}
 
 </style>
+
