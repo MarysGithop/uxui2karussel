@@ -1,5 +1,6 @@
 ---
 // @ts-nocheck
+import Mainlayout from '../../layouts/Mainlayout.astro'
 export async function getStaticPaths() {
   const url = "https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/artist"
   const options = {
@@ -17,9 +18,37 @@ export async function getStaticPaths() {
 }
 const { artist } = Astro.props;
 ---
+<Mainlayout>
 
-<h1>{artist.name}</h1>
-<p>{artist.info}</p>
-<img 
-    src={`/img/${artist.img}`} 
-    alt={artist.name} />
+
+<article class="single_view_card">
+  <h3>{artist.name}</h3>
+  <img 
+  src={`/img/${artist.img}`} 
+  alt={artist.name} />
+  <h4>{artist.playing_day}</h4>
+  <h4>{artist.playing_time}</h4>
+  <p>{artist.info}</p>
+</article>
+
+</Mainlayout>
+
+<style>
+  h3{
+    font-family: "Bebas Neue";
+    font-size: 90px;
+    color: white;
+}
+
+h4 {
+    font-family: "Bebas Neue";
+    font-size: 60px;
+    color: white;
+}
+
+p{
+    font-family: "JetBrains Mono" ;
+    font-size: 30px;
+    color: white;
+}
+</style>
