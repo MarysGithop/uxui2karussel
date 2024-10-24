@@ -2,35 +2,57 @@
 const {artist}=Astro.props
 
 ---
+<a href="../../single_view">
+<div class="flexbox_lineup">
 
-
-<div class="artist-container">
-
+   
+<div class="data_lineup">
 <article>
     <h3>{artist.name}</h3>
     <img 
     src={`/img/${artist.img}`} 
     alt={artist.name} />
 </article>
+</div>
+
+     <div class="tekstlink">  
+         <h3>click here for thursday’s lineup</h3>
+    </div> 
 
 </div>
+
+</a>
 
 
 
 <style>
 
-.artist-container {
-    display: grid;
+
+ .data_lineup {
+ display: grid;
     grid-template-columns: repeat(2, 1fr); 
     font-family: "Bebas Neue", serif;
     position: center;
-   
-    
+ }
+
+ .flexbox_lineup {
+    display: flex;
+     justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
+
+ .tekstlink {
+    display: flex;
+ }
+
+
 article {
-    
     padding: 10px;
     text-align: center;
+     display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    position: center;
     
 }
 article h3 {
@@ -38,17 +60,15 @@ article h3 {
     margin-bottom: 10px;
     margin-right: 100px;
     color: #F00C8F; 
-    position: absolute;
-
-
-     
-
+   position: absolute;   
 }
+
 article img {
     width: 100%; 
-    max-width: 200px; 
+    max-width: 250px; 
     height: auto;
 }
+
 
 
 

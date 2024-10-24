@@ -20,7 +20,10 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
 <Mainlayout>
 
     <Button variant="secondary">Knap</Button>
+
     <h1>LINEUP</h1>
+    
+
     <div class="thursday">
         {
             artists.filter(artist => artist.playing_day == "thursday").map((artist)=>(
@@ -29,20 +32,14 @@ const artists = await fetch("https://jtwmkrhqbfrekirjyiit.supabase.co/rest/v1/ar
             ))
         }
     </div>
+  
         
-    <div>
-    <h3>click here for thursday’s lineup</h3>
-</div>
+
 
 </Mainlayout>
 
 
 <style>
-.thursday {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    padding: 1px;
-    
 
-}
+
 </style>
